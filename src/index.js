@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {Provider} from 'react-redux';
-import {configureStore,combineReducers} from '@reduxjs/toolkit'
+import { configureStore, combineReducers, getDefaultMiddleware} from '@reduxjs/toolkit'
 
 //Reducers
 import authReducer from './Controllers/Redux/authSlice'
@@ -17,7 +17,10 @@ const reducer = combineReducers({
   user:userReducer,
 })
 const store = configureStore({
-  reducer
+  reducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 })
 
 ReactDOM.render(

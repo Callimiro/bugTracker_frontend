@@ -1,11 +1,12 @@
 import React from 'react'
+import './bugCard.css'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (props)=>{
     const {name,priority,version} = props.bug;
 
     function Clicked(){
-        props.clicked(props.name);
+        props.clicked(name);
     }
     return(
         <div className="bug-card" onClick={Clicked}>

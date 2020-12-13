@@ -16,11 +16,16 @@ export default()=>{
         dispatch(getBugs());
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[bugs.length < 0]);
+
+    function BUgClicked(name){
+
+    }
+
     return(
         <div className="page-container">
             {
                 bugs.map((bug)=>{
-                    return <BugCard bug={bug}/>
+                    return <BugCard bug={bug} clicked={BUgClicked}/>
                 })
             }
         </div>
